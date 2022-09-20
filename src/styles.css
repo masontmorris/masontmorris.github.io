@@ -50,4 +50,10 @@ li {
 
 .project img {
     width: 100%;
+    transition: opacity 0.5s ease-in-out;
+    opacity: 1
+}
+
+.project img:hover {
+    opacity: 0.5;
 }
