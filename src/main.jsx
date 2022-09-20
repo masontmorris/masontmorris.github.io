@@ -20,6 +20,12 @@ ReactDOM.createRoot(document.getElementById("root")).render(
                 link="https://hongry.herokuapp.com/"
                 image="./src/assets/hongry-screenshot.png"
             />
+            <Project
+                title="Sapient"
+                description="A full stack web app where users can organize or volunteer for local community events. Made using React, Node, MongoDB, Mongoose, Express, GraphQL, and Apollo Server."
+                link="https://sapient-origin.herokuapp.com/"
+                image="./src/assets/sapient-screenshot.png"
+            />
         </div>
     </React.StrictMode>
 );
