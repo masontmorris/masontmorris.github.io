@@ -11,33 +11,8 @@ body {
     -moz-osx-font-smoothing: grayscale;
 }
 
-nav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0 20px;
-    background-color: #333;
-    color: #fff;
-}
 
-ul {
-    display: flex;
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-}
-
-li {
-    margin: 0 10px;
-}
-
-.nav-link {
-    text-decoration: none;
-    color: white;
-    font-size: 2rem;
-}
-
-.projects-container {
+#projects {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -56,4 +31,8 @@ li {
 
 .project img:hover {
     opacity: 0.5;
+}
+
+#test {
+    height: 1000px
 }

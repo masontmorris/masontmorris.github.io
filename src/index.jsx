@@ -1,13 +1,16 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import NavBar from "./components/NavBar";
+import About from "./components/About";
 import Project from "./components/Project";
+import Contact from "./components/Contact";
 import "./styles.css";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
     <React.StrictMode>
         <NavBar />
-        <div className="projects-container">
+        <About />
+        <div id="projects">
             <Project
                 title="Fan Food"
                 description="A simple web app which finds restaurants and bars near upcoming live events. Made using vanilla Javascript, JQuery, the TicketMaster Discover and Foursquare Places APIs, and Bulma for styling."
@@ -30,5 +33,6 @@ ReactDOM.createRoot(document.getElementById("root")).render(
                 image="./src/assets/sapient-screenshot.png"
             />
         </div>
+        <Contact />
     </React.StrictMode>
 );
