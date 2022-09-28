@@ -23,7 +23,7 @@ const contactForm = () => {
     const { name, email, companyCheckbox, company, message } = formValue;
 
     return (
-        <Container>
+        <Container id="contact">
             <form action={FORM_ENDPOINT} method="POST" target="_blank">
                 <input type="text" className="form-input" id="form-name" placeholder="Your name" name="name" value={name} onChange={handleChange} />
                 <input type="email" className="form-input" id="form-email" placeholder="Your email" name="email" value={email} onChange={handleChange} />
