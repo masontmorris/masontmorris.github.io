@@ -15,7 +15,7 @@ body {
 #projects {
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
+    justify-content: space-evenly;
     margin: 0 20px;
 }
 
@@ -33,6 +33,16 @@ body {
     opacity: 0.5;
 }
 
-#test {
-    height: 1000px
+.form-check {
+    margin-right: 10px;
+}
+
+#contact {
+    width: 30%;
+}
+
+#contact-form {
+    display: flex;
+    flex-direction: column;
+    align-items: left;
 }
