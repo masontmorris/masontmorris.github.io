@@ -1,8 +1,8 @@
 import React from "react";
 import Project from "./Project";
-import fanfoodUrl from "/src/assets/fanfood-screenshot.png";
-import hongryUrl from "/src/assets/hongry-screenshot.png";
-import sapientUrl from "/src/assets/sapient-screenshot.png";
+import fanfoodUrl from "/src/assets/fanfood-screenshot.webp";
+import hongryUrl from "/src/assets/hongry-screenshot.webp";
+import sapientUrl from "/src/assets/sapient-screenshot.webp";
 
 class Projects extends React.Component {
     render() {
