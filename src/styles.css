@@ -1,3 +1,11 @@
+/* css variables for color scheme */
+:root {
+    --primary-color: #395B64;
+    --secondary-color: #F5F2E7;
+    --tertiary-color: #2666CF;
+    --quaternary-color: #2C3333;
+}
+
 * {
     box-sizing: border-box;
 }
@@ -12,6 +20,14 @@ body {
 }
 
 
+.navbar-expand-lg {
+    background-color: var(--primary-color);
+}
+
+.navbar-expand-lg a {
+    color: var(--secondary-color);
+}
+
 #projects {
     display: flex;
     flex-wrap: wrap;
@@ -21,6 +37,7 @@ body {
 
 .project {
     text-align: center;
+    width: 25rem;
 }
 
 .project img {
@@ -38,11 +55,25 @@ body {
 }
 
 #contact {
-    width: 30%;
+    width: 70%;
 }
 
 #contact-form {
     display: flex;
     flex-direction: column;
     align-items: left;
+
+}
+
+
+@media only screen and (max-width: 600px) {
+    #projects {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .project {
+        width: 300px;
+    }
+    
 }

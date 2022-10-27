@@ -7,7 +7,7 @@ class Project extends React.Component {
     }
     render() {
         return (
-            <Card className="project" style={{ width: "25rem" }}>
+            <Card className="project">
                 <a href={this.props.link} target="_blank">
                     <img src="" alt={this.props.title} id={this.props.title} />
                 </a>
