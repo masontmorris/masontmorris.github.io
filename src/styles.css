@@ -1,8 +1,8 @@
 /* css variables for color scheme */
 :root {
     --primary-color: #395B64;
-    --secondary-color: #F5F2E7;
-    --tertiary-color: #2666CF;
+    --secondary-color: #eaeef0;
+    --tertiary-color: #548CA8;
     --quaternary-color: #2C3333;
 }
 
@@ -17,8 +17,12 @@ body {
         sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    background-color: var(--secondary-color);
 }
 
+.card {
+    background-color: white
+}
 
 .navbar-expand-lg {
     background-color: var(--primary-color);
@@ -26,6 +30,7 @@ body {
 
 .navbar-expand-lg a {
     color: var(--secondary-color);
+    font-size: x-large;
 }
 
 #projects {
@@ -55,7 +60,18 @@ body {
 }
 
 #contact {
-    width: 70%;
+    width: 35%;
+    margin: 1rem auto;
+    padding: 1rem;
+}
+
+#contact h2 {
+    text-align: center;
+}
+
+.form-input {
+    margin: 0.5rem 0;
+    padding: 0.5rem;
 }
 
 #contact-form {
@@ -63,6 +79,11 @@ body {
     flex-direction: column;
     align-items: left;
 
+}
+
+#form-message {
+    resize: none;
+    min-height: 8rem;
 }
 
 

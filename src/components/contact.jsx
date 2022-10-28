@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import Container from "react-bootstrap/Container";
+import Card from "react-bootstrap/Card";
 import Form from "react-bootstrap/Form";
 
 const FORM_ENDPOINT = "https://public.herotofu.com/v1/e7fe2340-3edd-11ed-a10f-d1a38bd15d37";
@@ -24,7 +24,8 @@ const contactForm = () => {
     const { name, email, companyCheckbox, company, message } = formValue;
 
     return (
-        <Container id="contact">
+        <Card id="contact">
+            <h2>Contact me</h2>
             <Form action={FORM_ENDPOINT} method="POST" target="_blank" id="contact-form">
                 <input type="text" className="form-input form-control" id="form-name" placeholder="Your name" name="name" value={name} onChange={handleChange} />
                 <input type="email" className="form-input form-control" id="form-email" placeholder="Your email" name="email" value={email} onChange={handleChange} />
@@ -40,7 +41,7 @@ const contactForm = () => {
                     Submit
                 </button>
             </Form>
-        </Container>
+        </Card>
     );
 };
 
