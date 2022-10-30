@@ -33,11 +33,23 @@ body {
     font-size: x-large;
 }
 
+.nav-container {
+    margin: 0 1rem;
+}
+
 #projects {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-evenly;
     margin: 0 20px;
+}
+
+#projects-container {
+    width: 25rem;
+    margin: auto;
+}
+.carousel {
+    width: 25rem;
 }
 
 .project {
@@ -87,7 +99,7 @@ body {
 }
 
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 599px) {
     #projects {
         display: flex;
         flex-direction: column;
