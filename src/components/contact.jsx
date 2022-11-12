@@ -45,4 +45,4 @@ const contactForm = () => {
     );
 };
 
-export default contactForm;
+export default Contact;
