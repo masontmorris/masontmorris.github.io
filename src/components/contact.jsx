@@ -4,7 +4,7 @@ import Form from "react-bootstrap/Form";
 
 const FORM_ENDPOINT = "https://public.herotofu.com/v1/e7fe2340-3edd-11ed-a10f-d1a38bd15d37";
 
-const contactForm = () => {
+const Contact = () => {
     const [formValue, setFormValue] = useState({
         name: "",
         email: "",
