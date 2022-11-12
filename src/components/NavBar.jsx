@@ -9,7 +9,7 @@ const NavBar = () => {
     return (
         <Navbar collapseOnSelect className="fixed-top" sticky="top" expand="lg">
             <Container className="nav-container">
-                <Navbar.Brand href="#top">Mason Morris</Navbar.Brand>
+                <Navbar.Brand href="#top">Mason T Morris</Navbar.Brand>
                 <Navbar.Toggle onClick={() => setIsOpen((isOpen) => !isOpen)} aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav">
                     <Nav className="me-auto">
