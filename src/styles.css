@@ -48,13 +48,16 @@ body {
     width: 25rem;
     margin: auto;
 }
-.carousel {
+
+
+#project-carousel {
     width: 25rem;
 }
 
 .project {
     text-align: center;
     width: 25rem;
+    height: 30rem;
 }
 
 .project img {
@@ -86,6 +89,14 @@ body {
     padding: 0.5rem;
 }
 
+.form-button {
+    background-color: var(--primary-color)
+}
+
+.form-button:hover {
+    background-color: var(--quaternary-color)
+}
+
 #contact-form {
     display: flex;
     flex-direction: column;
@@ -109,4 +120,40 @@ body {
         width: 300px;
     }
     
+}
+
+.carousel-indicators {
+    background-color: var(--primary-color);
+    width: 8rem;
+    margin: auto;
+    height: 1rem;
+}
+
+
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  height: 100px;
+  width: 100px;
+  outline: black;
+  background-size: 100%, 100%;
+  border-radius: 50%;
+  /* border: 1px solid black; */
+  background-image: none;
+  position: relative;
+  top: 10px;
+}
+
+.carousel-control-next-icon:after
+{
+  content: '>';
+  font-size: 55px;
+  color: var(--tertiary-color);
+  position: relative;
+}
+
+.carousel-control-prev-icon:after {
+  content: '<';
+  font-size: 55px;
+  color: var(--tertiary-color);
 }
