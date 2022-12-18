@@ -5,7 +5,7 @@ import Hero from "./components/Hero";
 import About from "./components/About";
 import ProjectsQuery from "./components/Projects-Query";
 import ContactForm from "./components/ContactForm";
-import "./styles.css";
+import "./style/css/output.css";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
     <React.StrictMode>

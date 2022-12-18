@@ -12,7 +12,7 @@ const ContactForm = () => {
         company: "",
         message: "",
     });
-    const handleChange = (event) => {
+    const handleFormChange = (event) => {
         const { name, value, type, checked } = event.target;
         setFormValue((prevState) => {
             return {
@@ -27,16 +27,16 @@ const ContactForm = () => {
         <Card id="contact">
             <h2>Contact me</h2>
             <Form action={FORM_ENDPOINT} method="POST" target="_blank" id="contact-form">
-                <input type="text" className="form-input form-control" id="form-name" placeholder="Your name" name="name" value={name} onChange={handleChange} />
-                <input type="email" className="form-input form-control" id="form-email" placeholder="Your email" name="email" value={email} onChange={handleChange} />
+                <input type="text" className="form-input form-control" id="form-name" placeholder="Your name" name="name" value={name} onChange={handleFormChange} />
+                <input type="email" className="form-input form-control" id="form-email" placeholder="Your email" name="email" value={email} onChange={handleFormChange} />
                 <div style={{ display: "flex" }}>
-                    <input type="checkbox" className="form-checkbox form-check" name="companyCheckbox" checked={companyCheckbox} onChange={handleChange} />
+                    <input type="checkbox" className="form-checkbox form-check" name="companyCheckbox" checked={companyCheckbox} onChange={handleFormChange} />
                     <label htmlFor="companyCheckbox" className="form-check-label">
                         Are you reaching out on behalf of a company?
                     </label>
                 </div>
-                {companyCheckbox && <input type="text" className="form-input form-control" id="form-company" placeholder="Your company" name="company" value={company} onChange={handleChange} />}
-                <textarea className="form-input form-control" id="form-message" placeholder="Your message" name="message" value={message} onChange={handleChange} />
+                {companyCheckbox && <input type="text" className="form-input form-control" id="form-company" placeholder="Your company" name="company" value={company} onChange={handleFormChange} />}
+                <textarea className="form-input form-control" id="form-message" placeholder="Your message" name="message" value={message} onChange={handleFormChange} />
                 <button type="submit" className="form-button btn btn-dark" id="form-submit">
                     Submit
                 </button>

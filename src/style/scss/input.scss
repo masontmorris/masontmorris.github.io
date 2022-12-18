@@ -6,6 +6,13 @@
     --quaternary-color: #2C3333;
 }
 
+$navbar-light-active-color: var(--secondary-color);
+
+@import '../../../node_modules/bootstrap/scss/mixins';
+@import '../../../node_modules/bootstrap/scss/functions';
+@import '../../../node_modules/bootstrap/scss/_variables';
+@import '../../../node_modules/bootstrap/scss/_navbar';
+
 * {
     box-sizing: border-box;
 }
@@ -18,6 +25,14 @@ body {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     background-color: var(--secondary-color);
+}
+
+.nav-link:focus, .nav-link:active {
+    outline: none !important;
+    outline-offset: none !important;
+    box-shadow: none !important;
+    color: var(--secondary-color);
+    text-decoration-color: var(--secondary-color);
 }
 
 .card {
