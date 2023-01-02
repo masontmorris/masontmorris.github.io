@@ -1,9 +1,9 @@
 /* css variables for color scheme */
 :root {
-  --primary-color: #395B64;
+  --primary-color: #395b64;
   --secondary-color: #eaeef0;
-  --tertiary-color: #548CA8;
-  --quaternary-color: #2C3333;
+  --tertiary-color: #548ca8;
+  --quaternary-color: #2c3333;
 }
 
 .navbar {
@@ -436,14 +436,6 @@ body {
   background-color: var(--secondary-color);
 }
 
-.nav-link:focus, .nav-link:active {
-  outline: none !important;
-  outline-offset: none !important;
-  box-shadow: none !important;
-  color: var(--secondary-color);
-  text-decoration-color: var(--secondary-color);
-}
-
 .card {
   background-color: white;
 }
@@ -461,26 +453,35 @@ body {
   margin: 0 1rem;
 }
 
+.navbar-toggler-icon {
+  color: var(--secondary-color);
+}
+
 #projects {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-evenly;
+  flex-direction: row;
   margin: 0 20px;
 }
 
 #projects-container {
-  width: 25rem;
+  width: 80%;
   margin: auto;
+  margin-bottom: 1rem;
 }
 
 #project-carousel {
-  width: 25rem;
+  width: 100%;
+  height: 385px;
+  margin: auto;
+  padding-bottom: 0;
 }
 
 .project {
   text-align: center;
   width: 25rem;
-  height: 30rem;
+  height: 380px;
 }
 
 .project img {
@@ -526,26 +527,32 @@ body {
   align-items: left;
 }
 
+@media only screen and (max-width: 599px) {
+  .project {
+    width: 100%;
+  }
+  #contact {
+    width: 70%;
+  }
+}
 #form-message {
   resize: none;
   min-height: 8rem;
 }
 
-@media only screen and (max-width: 599px) {
-  #projects {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-  .project {
-    width: 300px;
-  }
-}
 .carousel-indicators {
   background-color: var(--primary-color);
   width: 8rem;
   margin: auto;
   height: 1rem;
+}
+
+.carousel-control-next,
+.carousel-control-prev {
+  visibility: hidden;
+  width: 10%;
+  height: 20%;
+  top: 10%;
 }
 
 .carousel-control-prev-icon,
@@ -558,19 +565,22 @@ body {
   /* border: 1px solid black; */
   background-image: none;
   position: relative;
-  top: 10px;
 }
 
 .carousel-control-next-icon:after {
   content: ">";
   font-size: 55px;
   color: var(--tertiary-color);
-  position: relative;
 }
 
 .carousel-control-prev-icon:after {
   content: "<";
   font-size: 55px;
+  color: var(--tertiary-color);
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon:active {
   color: var(--tertiary-color);
 }
 

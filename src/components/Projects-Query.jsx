@@ -10,8 +10,8 @@ class ProjectQuery extends React.Component {
                 <Media queries={{ mobile: "(max-width: 599px)", pc: "(min-width: 600px)" }}>
                     {(matches) => (
                         <div>
-                            {matches.mobile && <Projects />}
-                            {matches.pc && <ProjectCarousel />}
+                            {matches.mobile && <ProjectCarousel />}
+                            {matches.pc && <Projects />}
                         </div>
                     )}
                 </Media>
