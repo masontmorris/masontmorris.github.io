@@ -6,7 +6,11 @@
     --quaternary-color: #2c3333;
 }
 
+$sans-serif: "Source Sans Pro", Helvetica, Verdana, sans-serif;
+$nav-sans-serif: "Inter", sans-serif;
+
 $navbar-light-active-color: var(--secondary-color);
+$navbar-brand-font-size: 1.4rem;
 
 @import "../../../node_modules/bootstrap/scss/mixins";
 @import "../../../node_modules/bootstrap/scss/functions";
@@ -19,10 +23,12 @@ $navbar-light-active-color: var(--secondary-color);
 
 body {
     margin: 0;
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     background-color: var(--secondary-color);
+    font-family: $sans-serif;
+    font-style: normal;
+    font-variant: normal;
 }
 
 .card {
@@ -35,15 +41,24 @@ body {
 
 .navbar-expand-lg a {
     color: var(--secondary-color);
-    font-size: x-large;
+    font-family: $nav-sans-serif;
 }
 
 .nav-container {
     margin: 0 1rem;
+    align-items: flex-end;
+}
+
+.navbar-collapse {
+    font-size: xx-large;
 }
 
 .navbar-toggler-icon {
     color: var(--secondary-color);
+}
+
+.brand-camelcase {
+    font-size: xx-large;
 }
 
 #projects {
@@ -71,7 +86,7 @@ body {
 .project {
     text-align: center;
     width: 25rem;
-    height: 380px;
+    height: 420px;
 }
 
 .project img {
@@ -82,6 +97,10 @@ body {
 
 .project img:hover {
     opacity: 0.5;
+}
+
+.project h1 {
+    font-weight: bold;
 }
 
 .form-check {

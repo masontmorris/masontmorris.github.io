@@ -13,9 +13,9 @@
   --bs-navbar-hover-color: rgba(0, 0, 0, 0.7);
   --bs-navbar-disabled-color: rgba(0, 0, 0, 0.3);
   --bs-navbar-active-color: var(--secondary-color);
-  --bs-navbar-brand-padding-y: 0.3125rem;
+  --bs-navbar-brand-padding-y: 0.2rem;
   --bs-navbar-brand-margin-end: 1rem;
-  --bs-navbar-brand-font-size: 1.25rem;
+  --bs-navbar-brand-font-size: 1.4rem;
   --bs-navbar-brand-color: var(--secondary-color);
   --bs-navbar-brand-hover-color: var(--secondary-color);
   --bs-navbar-nav-link-padding-x: 0.5rem;
@@ -430,10 +430,12 @@
 
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background-color: var(--secondary-color);
+  font-family: "Source Sans Pro", Helvetica, Verdana, sans-serif;
+  font-style: normal;
+  font-variant: normal;
 }
 
 .card {
@@ -446,15 +448,24 @@ body {
 
 .navbar-expand-lg a {
   color: var(--secondary-color);
-  font-size: x-large;
+  font-family: "Inter", sans-serif;
 }
 
 .nav-container {
   margin: 0 1rem;
+  align-items: flex-end;
+}
+
+.navbar-collapse {
+  font-size: xx-large;
 }
 
 .navbar-toggler-icon {
   color: var(--secondary-color);
+}
+
+.brand-camelcase {
+  font-size: xx-large;
 }
 
 #projects {
@@ -481,7 +492,7 @@ body {
 .project {
   text-align: center;
   width: 25rem;
-  height: 380px;
+  height: 420px;
 }
 
 .project img {
@@ -492,6 +503,10 @@ body {
 
 .project img:hover {
   opacity: 0.5;
+}
+
+.project h1 {
+  font-weight: bold;
 }
 
 .form-check {
