@@ -12,11 +12,13 @@
     "dependencies": {
         "bootstrap": "^5.2.3",
         "express": "^4.18.2",
+        "framer-motion": "^8.5.2",
         "react": "^18.2.0",
         "react-bootstrap": "^2.7.0",
         "react-dom": "^18.2.0",
         "react-media": "^1.10.0",
-        "sass": "^1.57.0"
+        "sass": "^1.57.0",
+        "styled-components": "^5.3.6"
     },
     "devDependencies": {
         "@types/react": "^18.0.26",

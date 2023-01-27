@@ -1,4 +1,5 @@
 /* css variables for color scheme */
+
 :root {
     --primary-color: #395b64;
     --secondary-color: #eaeef0;
@@ -11,11 +12,6 @@ $nav-sans-serif: "Inter", sans-serif;
 
 $navbar-light-active-color: var(--secondary-color);
 $navbar-brand-font-size: 1.4rem;
-
-@import "../../../node_modules/bootstrap/scss/mixins";
-@import "../../../node_modules/bootstrap/scss/functions";
-@import "../../../node_modules/bootstrap/scss/_variables";
-@import "../../../node_modules/bootstrap/scss/_navbar";
 
 * {
     box-sizing: border-box;
@@ -35,31 +31,37 @@ body {
     background-color: white;
 }
 
-.navbar-expand-lg {
-    background-color: var(--primary-color);
-}
+// .navbar-expand-lg {
+//     background-color: var(--primary-color);
+// }
 
-.navbar-expand-lg a {
-    color: var(--secondary-color);
-    font-family: $nav-sans-serif;
-}
+// .navbar-expand-lg a {
+//     color: var(--secondary-color);
+//     font-family: $nav-sans-serif;
+// }
 
-.nav-container {
-    margin: 0 1rem;
-    align-items: flex-end;
-}
+// .nav-container {
+//     margin: 0 1rem;
+//     align-items: flex-end;
+// }
 
-.navbar-collapse {
-    font-size: xx-large;
-}
+// .navbar-collapse {
+//     font-size: xx-large;
+//     display: block !important;
+// }
 
-.navbar-toggler-icon {
-    color: var(--secondary-color);
-}
+// .me-auto {
+//     justify-content: space-between;
+//     margin-right: 0 !important;
+// }
 
-.brand-camelcase {
-    font-size: xx-large;
-}
+// .navbar-toggler-icon {
+//     color: var(--secondary-color);
+// }
+
+// .brand-camelcase {
+//     font-size: xx-large;
+// }
 
 #projects {
     display: flex;
@@ -193,3 +195,9 @@ body {
 .carousel-control-next-icon:active {
     color: var(--tertiary-color);
 }
+
+@import "../../../node_modules/bootstrap/scss/bootstrap";
+@import "../../../node_modules/bootstrap/scss/mixins";
+@import "../../../node_modules/bootstrap/scss/functions";
+@import "../../../node_modules/bootstrap/scss/_variables";
+@import "../../../node_modules/bootstrap/scss/_navbar";
