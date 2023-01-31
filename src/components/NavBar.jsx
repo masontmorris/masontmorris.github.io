@@ -1,34 +1,50 @@
 import React, { useState } from "react";
-import Container from "react-bootstrap/Container";
-import Nav from "react-bootstrap/Nav";
-import Navbar from "react-bootstrap/Navbar";
+import Media from "react-media";
+import { FaBars, FaTimes } from "react-icons/fa";
 
 const NavBar = () => {
     const [isOpen, setIsOpen] = useState(false);
 
     return (
-        <Navbar collapseOnSelect className="fixed-top" sticky="top" expand="lg">
-            <Container className="nav-container">
-                <Navbar.Brand href="#top" class="brand">
-                    <span class="brand-camelcase">M</span>ASON <span class="brand-camelcase">M</span>ORRIS
-                </Navbar.Brand>
-                <Navbar.Toggle onClick={() => setIsOpen((isOpen) => !isOpen)} aria-controls="basic-navbar-nav" />
-                <Navbar.Collapse id="basic-navbar-nav">
-                    <Nav className="me-auto">
-                        <Nav.Link className="nav-link" href="#top">
-                            About
-                        </Nav.Link>
-                        <Nav.Link className="nav-link" href="#projects">
-                            Projects
-                        </Nav.Link>
-                        <Nav.Link className="nav-link" href="#contact">
-                            Contact
-                        </Nav.Link>
-                    </Nav>
-                </Navbar.Collapse>
-            </Container>
-        </Navbar>
+        <header>
+            <nav id="navbar">
+                <div id="brand">
+                    <span class="brand-upper">M</span>ason <span className="brand-upper">M</span>orris
+                </div>
+                <div className={isOpen ? "nav-links show-nav" : "nav-links"}>
+                    <a href="" className="nav-link" id="about-nav">
+                        About
+                    </a>
+                    <a href="" className="nav-link" id="projects-nav">
+                        Projects
+                    </a>
+                    <a href="" className="nav-link" id="contact-nav">
+                        Contact
+                    </a>
+                </div>
+            </nav>
+            <Media queries={{ mobile: "(max-width: 599px)", pc: "(min-width: 600px)" }}>
+                {(matches) => (
+                    <div>
+                        {matches.mobile && (
+                            <button
+                                id="nav-toggle"
+                                onclick={() => {
+                                    setIsOpen(!isOpen);
+                                }}
+                            >
+                                <FaBars />
+                            </button>
+                        )}
+                    </div>
+                )}
+            </Media>
+        </header>
     );
 };
 
-// export default NavBar;
+export default NavBar;
+
+// TODO: Add a button to the navbar that will toggle the navbar open and closed.
+// TODO: Make the navbar responsive.
+// TODO: Copy brand casing and font styling from older commit.
