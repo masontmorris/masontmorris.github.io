@@ -8,37 +8,37 @@ const NavBar = () => {
     return (
         <header>
             <nav id="navbar">
+                <Media queries={{ mobile: "(max-width: 599px)", pc: "(min-width: 600px)" }}>
+                    {(matches) => (
+                        <div>
+                            {matches.mobile && (
+                                <button
+                                    id="nav-toggle"
+                                    onClick={() => {
+                                        setIsOpen(!isOpen);
+                                    }}
+                                >
+                                    <FaBars id="toggle-svg" />
+                                </button>
+                            )}
+                        </div>
+                    )}
+                </Media>
                 <div id="brand">
-                    <span class="brand-upper">M</span>ason <span className="brand-upper">M</span>orris
+                    <span className="brand-upper">M</span>ason <span className="brand-upper">M</span>orris
                 </div>
                 <div className={isOpen ? "nav-links show-nav" : "nav-links"}>
-                    <a href="" className="nav-link" id="about-nav">
+                    <a href="#about" className="nav-link" id="about-nav">
                         About
                     </a>
-                    <a href="" className="nav-link" id="projects-nav">
+                    <a href="#projects" className="nav-link" id="projects-nav">
                         Projects
                     </a>
-                    <a href="" className="nav-link" id="contact-nav">
+                    <a href="#contact" className="nav-link" id="contact-nav">
                         Contact
                     </a>
                 </div>
             </nav>
-            <Media queries={{ mobile: "(max-width: 599px)", pc: "(min-width: 600px)" }}>
-                {(matches) => (
-                    <div>
-                        {matches.mobile && (
-                            <button
-                                id="nav-toggle"
-                                onclick={() => {
-                                    setIsOpen(!isOpen);
-                                }}
-                            >
-                                <FaBars />
-                            </button>
-                        )}
-                    </div>
-                )}
-            </Media>
         </header>
     );
 };
