@@ -1,43 +1,49 @@
-name: Deploy to GitHub Pages
+name: Deploy
 
 on:
-  # Run when pushed. Use { branches: [main, master] } to run only on specific branches
   push:
-  # Allow manual triggering of the workflow
-  workflow_dispatch:
-  # OPTIONAL: Run at a specific cron schedule, e.g. first day of every month at 12:00 UTC (noon)
-  schedule:
-    - cron: "0 12 1 * *"
-
-permissions:
-  # To deploy to GitHub Pages
-  pages: write
-  # To verify that deployment originated from the right source
-  id-token: write
+    branches:
+      - main
 
 jobs:
-  # Run as a single build + deploy job to reduce setup time
-  deploy:
-    # Specify the deployment environment. Displays the URL in the GitHub Actions UI
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-
-    # Run on the latest Ubuntu LTS
+  build:
+    name: Build
     runs-on: ubuntu-latest
-    
+
     steps:
-      # Checkout the repository
-      - uses: actions/checkout@v4
+      - name: Checkout repo
+        uses: actions/checkout@v4
 
-      # Run whatever commands you want
-      - run: echo '<h1>Hello World</h1>' > index.html
+      - name: Setup Node
+        uses: actions/setup-node@v4
 
-      # Upload a specific page to GitHub Pages. Defaults to _site
-      - uses: actions/upload-pages-artifact@v3
+      - name: Install dependencies
+        uses: bahmutov/npm-install@v1
+
+      - name: Build project
+        run: npm run build
+
+      - name: Upload production-ready build files
+        uses: actions/upload-artifact@v4
         with:
-          path: .
+          name: production-files
+          path: ./dist
 
-      # Deploy the built site to GitHub Pages. The `id:` is required to show the URL in the GitHub Actions UI
-      - id: deployment
-        uses: actions/deploy-pages@v4
+  deploy:
+    name: Deploy
+    needs: build
+    runs-on: ubuntu-latest
+    if: github.ref == 'refs/heads/main'
+
+    steps:
+      - name: Download artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: production-files
+          path: ./dist
+
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./dist
