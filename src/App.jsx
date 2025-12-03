@@ -11,8 +11,8 @@ ReactDOM.createRoot(document.getElementById("root")).render(
     <React.StrictMode>
         <NavBar />
         <Hero />
-        <About />
         <ProjectsQuery />
+        <About />
         <ContactForm />
     </React.StrictMode>
 );

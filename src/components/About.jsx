@@ -5,10 +5,9 @@ class About extends React.Component {
     render() {
         return (
             <Container id="about">
-                <h1>About</h1>
+                <h1>Contact</h1>
                 <p>
-                    I am a full stack web developer with a passion for creating beautiful and functional web applications. I have experience with React, Node, Express, MongoDB, MySQL, and GraphQL. I am currently looking for a position as a web
-                    developer.
+                    Please feel free to contact me at <a>masonmorris8@gmail.com</a> or by using the form below!
                 </p>
             </Container>
         );
