@@ -1,27 +1,43 @@
+name: Deploy to GitHub Pages
+
+on:
+  # Run when pushed. Use { branches: [main, master] } to run only on specific branches
+  push:
+  # Allow manual triggering of the workflow
+  workflow_dispatch:
+  # OPTIONAL: Run at a specific cron schedule, e.g. first day of every month at 12:00 UTC (noon)
+  schedule:
+    - cron: "0 12 1 * *"
+
+permissions:
+  # To deploy to GitHub Pages
+  pages: write
+  # To verify that deployment originated from the right source
+  id-token: write
+
 jobs:
-  # Build job
-  build:
-    # <Not provided for brevity>
-    # At a minimum this job should upload artifacts using actions/upload-pages-artifact
-
-  # Deploy job
+  # Run as a single build + deploy job to reduce setup time
   deploy:
-    # Add a dependency to the build job
-    needs: build
-
-    # Grant GITHUB_TOKEN the permissions required to make a Pages deployment
-    permissions:
-      pages: write      # to deploy to Pages
-      id-token: write   # to verify the deployment originates from an appropriate source
-
-    # Deploy to the github-pages environment
+    # Specify the deployment environment. Displays the URL in the GitHub Actions UI
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
 
-    # Specify runner + deployment step
+    # Run on the latest Ubuntu LTS
     runs-on: ubuntu-latest
+    
     steps:
-      - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v4 # or specific "vX.X.X" version tag for this action
+      # Checkout the repository
+      - uses: actions/checkout@v4
+
+      # Run whatever commands you want
+      - run: echo '<h1>Hello World</h1>' > index.html
+
+      # Upload a specific page to GitHub Pages. Defaults to _site
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: .
+
+      # Deploy the built site to GitHub Pages. The `id:` is required to show the URL in the GitHub Actions UI
+      - id: deployment
+        uses: actions/deploy-pages@v4
